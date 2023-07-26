@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    transition: all 0.2s;
+}
+
+.navbar{
+    padding:0px 10px 0px 10px;
+    height:5rem;
+    background-color: gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+    font-size: larger;
+}
+
+.navbar ul{
+    display:flex;
+    gap:20px;
+    list-style: none;
+}
+
+.navbar ul a{
+    text-decoration: none;
+    color:inherit;
+}
+.navbar ul a:hover{
+    text-decoration: underline;
+}

@@ -13,5 +13,38 @@
 
     <h1 style="text-align: center;">Welcome, <span style="font-style: italic;"><%= locals.user_name %></span>!</h1>
     <!-- <img  style="height: 500px; width: 500px;" src="charlesdeluvio-Mv9hjnEUHR4-unsplash.jpg" alt="cant show"> -->
+
+
+    <h1 style="text-align: center;">Students-Info page</h1>
+
+    <ul>
+        <% for(let i of students) { %>
+        
+            <li style="display: flex; gap:10px;">
+                <ul style="display: flex; gap:20px; text-decoration: none;">
+                    <li> <%= i.name %> </li>
+                    <li> <%= i.batch %> </li>
+                    <li> <%= i.email %> </li>
+                    <li> <%= i.phone %> </li>
+                    <li> <%= i.placed %> </li> 
+                </ul>
+                
+                <a href="/student/delete/?id=<%= i._id %>" >
+                        <img style="height: 20px; width: 20px;" src="delete.png" alt="delete-btn" >
+                </a>
+            </li>
+        
+        <%}%>
+    </ul>
+
+    <form action="/student/create" method="post">
+        <input type="text" name="name" placeholder="Enter Student's Name" required>
+        <input type="text" name="batch" placeholder="Enter Batch Year" required>
+        <input type="email" name="email" placeholder="Enter Email" required>
+        <input type="text" name="phone" placeholder="Enter Phone #" required>
+        <input type="text" name="placed" placeholder="Placement Status" required>
+        <button type="submit">Add</button>
+    </form>
+
 </body>
 </html>

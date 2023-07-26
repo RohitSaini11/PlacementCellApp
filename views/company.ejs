@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement cell | Company</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <%- include('_navbar.ejs')  %>  
+    
+    <h1>List of Companies.</h1>
+
+    <ul>
+        <% for(let i of company) { %>
+        
+            <li style="display: flex; gap:10px;">
+                <ul style="display: flex; gap:20px; text-decoration: none;">
+                    <li> <%= i.name %> </li>
+                    <li> <%= i.date %> </li>
+                    <!-- <li> <%= i.email %> </li>
+                    <li> <%= i.phone %> </li>
+                    <li> <%= i.placed %> </li>  -->
+                </ul>
+                
+                <a href="/company/delete/?id=<%= i._id %>" >
+                        <img style="height: 20px; width: 20px;" src="delete.png" alt="delete-btn" >
+                </a>
+            </li>
+        
+        <%}%>
+    </ul>
+
+    <form action="/company/create" method="post">
+        <input type="text" name="name" placeholder="Enter Student's Name" required>
+        <input type="date" name="date" placeholder="Enter Interview Date" required>
+
+        <!-- <input type="email" name="email" placeholder="Enter Email" required>
+        <input type="text" name="phone" placeholder="Enter Phone #" required>
+        <input type="text" name="placed" placeholder="Placement Status" required> -->
+
+        <button type="submit">Add</button>
+    </form>
+    
+</body>
+</html>
