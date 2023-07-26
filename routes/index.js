@@ -14,5 +14,13 @@ router.use('/student', require('./students'));
 
 router.use('/company', require('./company'));
 
+// router.get('/signup', function(req,res){
+//     return res.render('signUp');
+// });
+
+// router.get('/signin', function(req,res){
+//     return res.render('signIn');
+// });
+
 
 module.exports = router;

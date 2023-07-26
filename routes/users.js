@@ -6,6 +6,7 @@ const userController = require('../controllers/userController');
 
 console.log( "router loaded" );
 
-// router.get( '/' , userController);
+router.get( '/signIn' , userController.signIn);
+router.get('/signUp' , userController.signUp);
 
 module.exports = router;

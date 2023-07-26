@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placement Cell | Sign In</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <h1 style="text-align: center;">Sign In page</h1>
+    
+    <div class="container">
+        <div class="formWrap">
+            <h1 style="text-align: center; margin:10px 0 10px 0;">Sign In </h1>
+            <form action="/users/create" method="post">
+                <input type="email" name="email" placeholder="Enter Email">
+                <input type="password" name="password" placeholder="Enter Password">
+
+                <button type="submit" style="padding: 5px; font-size: large;">Sign In</button>
+            </form>
+            <p style="margin-top: 10px;">Don't have an account? <a href="">Sign up</a></p>
+        </div>
+    </div>
+    
 </body>
 </html>
