@@ -1,10 +1,13 @@
 const Company = require('../models/company');
+const Student = require('../models/students');
+
 
 module.exports.renderPage = async function(req,res){
     try{
         const company = await Company.find({});
+        const student = await Student.find({});
 
-        return res.render('company',{ company} );
+        return res.render('company',{ company , student} );
     }
     catch(err){
         console.log(`Error in fetching company list from db" ${err}`);

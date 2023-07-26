@@ -23,12 +23,18 @@
                     <li> <%= i.placed %> </li>  -->
                 </ul>
                 
+                <select name="" id="">
+                    <% for(let j of student) { %> 
+                        <option value="" data-id="<%= j._id %>"> <%= j.name %> </option>
+                    <% } %>
+                </select>
+                
                 <a href="/company/delete/?id=<%= i._id %>" >
                         <img style="height: 20px; width: 20px;" src="delete.png" alt="delete-btn" >
                 </a>
             </li>
         
-        <%}%>
+        <% } %>
     </ul>
 
     <form action="/company/create" method="post">

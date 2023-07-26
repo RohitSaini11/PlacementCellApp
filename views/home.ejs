@@ -28,7 +28,13 @@
                     <li> <%= i.phone %> </li>
                     <li> <%= i.placed %> </li> 
                 </ul>
-                
+                <select>
+                    <option selected value="" hidden ><%= i.placed %></option>
+                    <option value="Placed"> Placed </option>
+                    <option value="Not Placed"> Not Placed </option>
+                    <option value="On Hold"> On Hold </option>
+                    <option value="Internship"> Internship </option>
+                </select>
                 <a href="/student/delete/?id=<%= i._id %>" >
                         <img style="height: 20px; width: 20px;" src="delete.png" alt="delete-btn" >
                 </a>
