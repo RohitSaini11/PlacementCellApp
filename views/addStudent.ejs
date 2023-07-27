@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Cell App | Add Student</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <form action="/student/create" method="post">
+        <input type="text" name="name" placeholder="Enter Student's Name" required>
+        <input type="text" name="batch" placeholder="Enter Batch Year" required>
+        <input type="email" name="email" placeholder="Enter Email" required>
+        <input type="text" name="phone" placeholder="Enter Phone #" required>
+        
+        <!-- <input type="text" name="placed" placeholder="Placement Status" required> -->
+        <select name="placed" id="">
+            <option disabled selected value="">Select</option>
+            <option value="Placed">Placed</option>
+            <option value="Not Placed">Not Placed</option>
+        </select>
+
+        <input type="text" name="college" placeholder="Enter college" required>
+        <input type="number" name="dsa" placeholder="Enter DSA Score" required>
+        <input type="number" name="webd" placeholder="Enter Web-Dev Score" required>
+        <input type="number" name="react" placeholder="Enter React Score" required>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

@@ -1,14 +1,26 @@
 const mongoose = require('mongoose');
 
 const companySchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required:true
+    name: {
+        type: String,
+        unique: true,
     },
-    date:{
-        type:Date,
-        required:true
-    }
+    students: [
+        {
+            student: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Student',
+            },
+            date: {
+                type: Date,
+                required: true,
+            },
+            result: {
+                type: String,
+                enum: ['On Hold', 'Selected', 'Pending', 'Not Selected', 'Did not Attempt'],
+            },
+        },
+    ]
 });
 
 const Company = mongoose.model('Company', companySchema);

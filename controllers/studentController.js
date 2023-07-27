@@ -15,17 +15,23 @@ const Student = require('../models/students');
 // }
 
 module.exports.createStudent = function(req,res){
+    const {name,email,batch,phone,placed,college,dsa,webd,react} = req.body;
+    console.log(req.body);
     Student.create({
-        name: req.body.name,
-        batch: req.body.batch,
-        email: req.body.email,
-        phone: req.body.phone,
-        placed: req.body.placed
+        name,
+        email,
+        batch,
+        phone,
+        placed,
+        college,
+        dsa,
+        webd,
+        react
     }).then((newStudent) => {
         console.log('******', newStudent);
         return res.redirect('/');
     }).catch((err) => {
-        console.log("Error in adding student details!");
+        console.log("Error in adding student details!",err);
         return;
     });
 }
@@ -39,4 +45,8 @@ module.exports.deleteStudent = function(req,res){
     .catch((err)=>{
         console.log('error in deleting student record',err);
     });
+}
+
+module.exports.addStudent = function(req,res){
+        return res.render('addStudent'); 
 }

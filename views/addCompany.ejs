@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Cell App | Add Interview</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <form action="/company/create" method="post">
+
+        <label for="student">Select Student</label>
+        <select name="id">
+            <% for(let i of student) { %>
+                <option value="<%= i._id %>"><%= i.name %></option>
+            <% } %>
+        </select>
+
+        <input type="text" name="name" placeholder="Enter Company Name" required>
+        <input type="date" name="date" placeholder="Enter Interview Date" required>
+
+        <button type="submit">Add</button>
+
+    </form>
+    
+</body>
+</html>

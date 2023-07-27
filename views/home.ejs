@@ -11,46 +11,85 @@
     <!-- partial -->
     <%- include('_navbar.ejs')  %>
 
-    <h1 style="text-align: center;">Welcome, <span style="font-style: italic;"><%= locals.user_name %></span>!</h1>
-    <!-- <img  style="height: 500px; width: 500px;" src="charlesdeluvio-Mv9hjnEUHR4-unsplash.jpg" alt="cant show"> -->
-
-
-    <h1 style="text-align: center;">Students-Info page</h1>
-
-    <ul>
-        <% for(let i of students) { %>
+    <div style="width: 70%; margin:40px auto auto auto; ">
         
-            <li style="display: flex; gap:10px;">
-                <ul style="display: flex; gap:20px; text-decoration: none;">
-                    <li> <%= i.name %> </li>
-                    <li> <%= i.batch %> </li>
-                    <li> <%= i.email %> </li>
-                    <li> <%= i.phone %> </li>
-                    <li> <%= i.placed %> </li> 
-                </ul>
-                <select>
-                    <option selected value="" hidden ><%= i.placed %></option>
-                    <option value="Placed"> Placed </option>
-                    <option value="Not Placed"> Not Placed </option>
-                    <option value="On Hold"> On Hold </option>
-                    <option value="Internship"> Internship </option>
-                </select>
-                <a href="/student/delete/?id=<%= i._id %>" >
-                        <img style="height: 20px; width: 20px;" src="delete.png" alt="delete-btn" >
-                </a>
-            </li>
-        
-        <%}%>
-    </ul>
+        <div style="display: flex; justify-content: space-between;">
+            <h1 style="text-align: center;">List of Students</h1>
+            <a href="/student/addStudent">+ Add Student</a>
+        </div>
 
-    <form action="/student/create" method="post">
-        <input type="text" name="name" placeholder="Enter Student's Name" required>
-        <input type="text" name="batch" placeholder="Enter Batch Year" required>
-        <input type="email" name="email" placeholder="Enter Email" required>
-        <input type="text" name="phone" placeholder="Enter Phone #" required>
-        <input type="text" name="placed" placeholder="Placement Status" required>
-        <button type="submit">Add</button>
-    </form>
+
+        <% if(students.length > 0) {%>
+			<div class="mt-3 mb-3">
+				<table class="table table-bordered table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Batch</th>
+							<th scope="col">Name</th>
+							<th scope="col">Email</th>
+							<th scope="col">Contact</th>
+							<th scope="col">DSA</th>
+							<th scope="col">WEB</th>
+							<th scope="col">REACT</th>
+							<th scope="col">Interview</th>
+							<th scope="col" class="text-end">Action</th>
+						</tr>
+					</thead>
+
+					<tbody id="myTable">
+						<% for(let student of students) {%>
+						<tr>
+							<th scope="row"><%=student.batch%></th>
+							<td><%=student.name%></td>
+							<td><%=student.email%></td>
+							<td><%=student.phone%></td>
+							<td><%=student.dsa%></td>
+							<td><%=student.webd%></td>
+							<td><%=student.react%></td>
+							<% if(student.interviews.length) {%>
+							<td>
+								<% for(let company of student.interviews){%>
+								<a href=" " id="compnay_name"><%=company.company%></a>
+								<%}%>
+							</td>
+							<%}else{%>
+							<td>NONE</td>
+							<%}%>
+							<td style="display: flex; justify-content: space-around; align-items: center">
+								<a href="/student/delete/?id=<%=student.id%>" type="button" class="btn btn-danger btn-small">Delete</a>
+							</td>
+						</tr>
+						<%}%>
+					</tbody>
+				</table>
+			</div>
+			<%}else{%>
+			<div class="w-75 mx-auto mt-5">
+				<h2>No Records Found</h2>
+			</div>
+			<%}%>
+        <!-- <ul>
+            <% for(let i of students) { %>
+            
+                <li style="display: flex; gap:10px;">
+                    <ul style="display: flex; gap:20px; text-decoration: none;">
+                        <li> <%= i.name %> </li>
+                        <li> <%= i.batch %> </li>
+                        <li> <%= i.email %> </li>
+                        <li> <%= i.phone %> </li>
+                        <li> <%= i.placed %> </li> 
+                    </ul>
+                    
+                    <a href="/student/delete/?id=<%= i._id %>" >
+                            <img style="height: 20px; width: 20px;" src="delete.png" alt="delete-btn" >
+                    </a>
+                </li>
+                
+            <%}%>
+        </ul> -->
+
+
+    </div>
 
 </body>
 </html>
