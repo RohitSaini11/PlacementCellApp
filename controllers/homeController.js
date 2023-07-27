@@ -22,7 +22,7 @@ module.exports.downloadReport = async function(req,res){
 
 		let data = '';
 		let no = 1;
-		let csv = 'S.No, Name, Email, College, Placemnt, Contact Number, Batch, DSA Score, WebDev Score, React Score, Interview, Date, Result';
+		let csv = 'S.No, Name, Email, College, Placement, Contact Number, Batch, DSA Score, WebDev Score, React Score, Interview, Date, Result';
 
 		for (let student of students) {
 			data =
@@ -34,7 +34,7 @@ module.exports.downloadReport = async function(req,res){
 				',' +
 				student.college +
 				',' +
-				student.placement +
+				student.placed +
 				',' +
 				student.contactNumber +
 				',' +

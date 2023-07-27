@@ -30,8 +30,7 @@ app.use(session({
         },
         function(err){
             console.log(err || 'connect-mongodb setup Ok')
-        }
-        )
+        })
 }));
     
 app.use(passport.initialize());

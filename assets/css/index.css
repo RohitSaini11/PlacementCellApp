@@ -1,3 +1,6 @@
+:root{
+    --dark-bg: #008cba;
+}
 *{
     margin: 0;
     padding: 0;
@@ -6,15 +9,12 @@
 body{
     transition: all 0.5s;
 }
-input{
-    padding: 5px;
-    font-size: larger;
-}
+
 .navbar{
     /* transition: none !important; */
     padding:0px 10px 0px 10px;
     height:5rem;
-    background-color: gray;
+    background-color: var(--dark-bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,6 +24,7 @@ input{
 
 .navbar ul{
     display:flex;
+    align-items: center;
     gap:20px;
     list-style: none;
 }
@@ -36,15 +37,20 @@ input{
     text-decoration: underline;
 }
 
-.container{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.thead-dark{
+    background-color: var(--dark-bg);
+    color:white;
+    width: 100%;
 }
-.container .formWrap form{
-    width:15rem;
-    display: flex;
-    flex-direction: column;
-    gap:15px;
+
+#logOut-btn{
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+#logOut-btn:hover{
+    background-color: white;
+    color:black;
 }

@@ -13,8 +13,8 @@
 
     <div style="width: 70%; margin:40px auto auto auto; ">
         
-        <div style="display: flex; justify-content: space-between;">
-            <h1 style="text-align: center;">List of Students</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin:10px 0px">
+            <h2>List of Students</h2>
             <a href="/student/addStudent">+ Add Student</a>
         </div>
 
@@ -49,7 +49,7 @@
 							<% if(student.interviews.length) {%>
 							<td>
 								<% for(let company of student.interviews){%>
-								<a href=" " id="compnay_name"><%=company.company%></a>
+								<p  id="compnay_name"><%=company.company%></p>
 								<%}%>
 							</td>
 							<%}else{%>
@@ -68,27 +68,6 @@
 				<h2>No Records Found</h2>
 			</div>
 			<%}%>
-        <!-- <ul>
-            <% for(let i of students) { %>
-            
-                <li style="display: flex; gap:10px;">
-                    <ul style="display: flex; gap:20px; text-decoration: none;">
-                        <li> <%= i.name %> </li>
-                        <li> <%= i.batch %> </li>
-                        <li> <%= i.email %> </li>
-                        <li> <%= i.phone %> </li>
-                        <li> <%= i.placed %> </li> 
-                    </ul>
-                    
-                    <a href="/student/delete/?id=<%= i._id %>" >
-                            <img style="height: 20px; width: 20px;" src="delete.png" alt="delete-btn" >
-                    </a>
-                </li>
-                
-            <%}%>
-        </ul> -->
-
-
     </div>
 
 </body>
