@@ -10,9 +10,10 @@
     <%- include('_navbar.ejs')  %>  
     
     <div style="width: 70%; margin:40px auto auto auto; ">
-        <div style="display: flex; justify-content: space-between;">
-            <h1 style="text-align: center;">List of Companies</h1>
-            <a href="/company/addCompany">+ Add Interview</a>
+        
+		<div style="display: flex; justify-content: space-between; align-items: center; margin:10px 0px;">
+            <h2>List of Companies</h2>
+            <a class="add-btn" href="/company/addCompany">+ Add Interview</a>
         </div>
     
         <% if(students.length > 0) {%>
@@ -33,29 +34,29 @@
 					<tbody id="myTable">
 						<% for(let student of students){%> <%i=0%> <% while(i< student.interviews.length){%>
 						<tr class="row-ref">
-							<th scope="row"><%=student.interviews[i].company%></th>
+							<td><%=student.interviews[i].company%></td>
 							<td><%=student.name%></td>
 							<td><%=student.email%></td>
-							<td><%=student.contactNumber%></td>
+							<td><%=student.phone%></td>
 							<td><%=student.batch%></td>
 							<td><%=student.interviews[i].date%></td>
 							<td>
 								<form
-									style="display: flex; align-items: center; justify-content: center"
+									style="display: flex; align-items: center; justify-content: center; gap: 5px;"
 									action="/company/updateResult/<%=student.id%>"
 									method="post"
 								>
 									<input hidden type="text" name="companyName" value="<%=student.interviews[i].company%>" />
 
-									<select class="form-select" aria-label="Default select example" name="companyResult" id="status" style="min-width: 130px">
-										<option selected id="delete-options"><%=student.interviews[i].result%></option>
+									<select class="form-select" aria-label="Default select example" name="companyResult" id="status" style="min-width: 130px; padding: 5px;">
+										<option selected disabled id="delete-options"><%=student.interviews[i].result%></option>
 										<option value="Selected">Selected</option>
 										<option value="Not Selected">Not Selected</option>
 										<option value="On Hold">On Hold</option>
 										<option value="Pending">Pending</option>
 									</select>
 
-									<button type="submit" class="btn btn-warning btn-small m-2">Update</button>
+									<button type="submit" class="update-btn">Update</button>
 								</form>
 							</td>
 						</tr>

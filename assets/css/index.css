@@ -6,9 +6,9 @@
     padding: 0;
     
 }
-body{
+/* body{
     transition: all 0.5s;
-}
+} */
 
 .navbar{
     /* transition: none !important; */
@@ -37,11 +37,39 @@ body{
     text-decoration: underline;
 }
 
+.add-btn{
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+.delete-btn{
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+}
+.update-btn{
+    padding: 3px;
+}
 
+.table{
+  width: 100%;
+  border-collapse: collapse !important;
+}
+.table td{
+    border: 1px solid gray;
+    padding: 10px;
+}
 .thead-dark{
     background-color: var(--dark-bg);
     color:white;
     width: 100%;
+}
+.thead-dark th{
+    border: 1px solid gainsboro;
 }
 
 #logOut-btn{

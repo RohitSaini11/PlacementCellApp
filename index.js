@@ -32,11 +32,11 @@ app.use(session({
             console.log(err || 'connect-mongodb setup Ok')
         })
 }));
-    
+
+app.use(express.static('assets'));    
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
-app.use(express.static('./assets'));
 app.use(express.urlencoded());
 
 //use express router

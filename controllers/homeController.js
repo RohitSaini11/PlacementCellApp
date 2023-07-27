@@ -36,7 +36,7 @@ module.exports.downloadReport = async function(req,res){
 				',' +
 				student.placed +
 				',' +
-				student.contactNumber +
+				student.phone +
 				',' +
 				student.batch +
 				',' +

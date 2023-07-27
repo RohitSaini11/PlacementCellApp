@@ -5,24 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placement Cell App | Add Interview</title>
     <link rel="stylesheet" href="css/index.css">
+    <style>
+        input{
+            padding: 5px;
+            font-size: medium;
+        }
+        select{
+            padding: 5px;
+            font-size: medium;
+        }
+    </style>
 </head>
 <body>
 
-    <form action="/company/create" method="post">
+    <div>
+        <div style="width: 30vw; margin: auto;">
+            <h2 style="text-align: center;">Add an Interview</h2>
+            <form action="/company/create" method="post" style="display: flex; flex-direction: column; gap: 5px;">
 
-        <label for="student">Select Student</label>
-        <select name="id">
-            <% for(let i of student) { %>
-                <option value="<%= i._id %>"><%= i.name %></option>
-            <% } %>
-        </select>
+                <label for="student" >Select Student</label>
+                <select name="id">
+                    <% for(let i of student) { %>
+                        <option value="<%= i._id %>"><%= i.name %></option>
+                    <% } %>
+                </select>
 
-        <input type="text" name="name" placeholder="Enter Company Name" required>
-        <input type="date" name="date" placeholder="Enter Interview Date" required>
+                <label for="name">Company</label>
+                <input type="text" name="name" placeholder="Enter Company Name" required>
+                
+                <label for="date">Interview Date</label>
+                <input type="date" name="date" placeholder="Enter Interview Date" required>
 
-        <button type="submit">Add</button>
+                <button type="submit" style="padding: 5px; margin-top: 10px; font-size: medium;">Add Interview</button>
 
-    </form>
-    
+            </form>
+        </div>
+    </div>
 </body>
 </html>

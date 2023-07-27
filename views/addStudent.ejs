@@ -5,26 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placement Cell App | Add Student</title>
     <link rel="stylesheet" href="css/index.css">
+    <style>
+        input{
+            padding: 5px;
+            font-size: medium;
+        }
+        select{
+            padding: 5px;
+            font-size: medium;
+        }
+    </style>
 </head>
 <body>
-    <form action="/student/create" method="post">
-        <input type="text" name="name" placeholder="Enter Student's Name" required>
-        <input type="text" name="batch" placeholder="Enter Batch Year" required>
-        <input type="email" name="email" placeholder="Enter Email" required>
-        <input type="text" name="phone" placeholder="Enter Phone #" required>
-        
-        <!-- <input type="text" name="placed" placeholder="Placement Status" required> -->
-        <select name="placed" id="">
-            <option disabled selected value="">Select</option>
-            <option value="Placed">Placed</option>
-            <option value="Not Placed">Not Placed</option>
-        </select>
+   
+    <div>
+        <div style="width: 40vw; margin: auto;">
+            <h2 style="text-align: center;">Add a Student</h2>
+            <form action="/student/create" method="post" style="display: flex; flex-direction: column; gap: 5px;">
 
-        <input type="text" name="college" placeholder="Enter college" required>
-        <input type="number" name="dsa" placeholder="Enter DSA Score" required>
-        <input type="number" name="webd" placeholder="Enter Web-Dev Score" required>
-        <input type="number" name="react" placeholder="Enter React Score" required>
-        <button type="submit">Add</button>
-    </form>
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="Enter Student's Name" required>
+                
+                <label for="batch">Batch</label>
+                <input type="text" name="batch" placeholder="Enter Batch Year" required>
+                
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Enter Email" required>
+                
+                <label for="phone">Contact Number</label>
+                <input type="text" name="phone" placeholder="Enter Phone #" required>
+                
+                <label for="college">College</label>
+                <input type="text" name="college" placeholder="Enter college" required>
+
+                <label for="placed">Placement Status</label>
+                <select name="placed" id="">
+                    <option disabled selected value="">Select</option>
+                    <option value="Placed">Placed</option>
+                    <option value="Not Placed">Not Placed</option>
+                </select>
+                
+                <label for="dsa">DSA score</label>
+                <input type="number" name="dsa" placeholder="Enter DSA Score" required>
+                
+                <label for="webd">Web-Dev Score</label>
+                <input type="number" name="webd" placeholder="Enter Web-Dev Score" required>
+                
+                <label for="react">React Score</label>
+                <input type="number" name="react" placeholder="Enter React Score" required>
+                
+                <button type="submit" style="padding: 5px; margin-top: 10px; font-size: medium;">Add Student</button>
+            </form>
+        </div>
+    </div>
+    
 </body>
 </html>

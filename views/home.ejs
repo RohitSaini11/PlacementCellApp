@@ -13,9 +13,9 @@
 
     <div style="width: 70%; margin:40px auto auto auto; ">
         
-        <div style="display: flex; justify-content: space-between; align-items: center; margin:10px 0px">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin:10px 0px;">
             <h2>List of Students</h2>
-            <a href="/student/addStudent">+ Add Student</a>
+            <a class="add-btn" href="/student/addStudent">+ Add Student</a>
         </div>
 
 
@@ -39,7 +39,7 @@
 					<tbody id="myTable">
 						<% for(let student of students) {%>
 						<tr>
-							<th scope="row"><%=student.batch%></th>
+							<td><%=student.batch%></td>
 							<td><%=student.name%></td>
 							<td><%=student.email%></td>
 							<td><%=student.phone%></td>
@@ -55,8 +55,8 @@
 							<%}else{%>
 							<td>NONE</td>
 							<%}%>
-							<td style="display: flex; justify-content: space-around; align-items: center">
-								<a href="/student/delete/?id=<%=student.id%>" type="button" class="btn btn-danger btn-small">Delete</a>
+							<td style="text-align: center;">
+								<a href="/student/delete/?id=<%=student.id%>" type="button" class="delete-btn">Delete</a>
 							</td>
 						</tr>
 						<%}%>
