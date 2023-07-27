@@ -7,7 +7,9 @@ const homeController = require('../controllers/homeController');
 
 console.log( "router loaded" );
 
-router.get( '/' ,passport.checkAuthentication, homeController.home );
+router.get( '/' , passport.checkAuthentication, homeController.home );
+
+router.get('/downloadReport', homeController.downloadReport);
 
 router.use('/users', require('./users'));
 

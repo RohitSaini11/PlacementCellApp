@@ -4,7 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placement Cell | Sign Up</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .container{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .container .formWrap form{
+            width:15rem;
+            display: flex;
+            flex-direction: column;
+            gap:15px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -18,7 +32,7 @@
 
                 <button type="submit" style="padding: 5px; font-size: large;">Sign Up</button>
             </form>
-            <p style="margin-top: 10px;">Don't have an account? <a href="">Sign up</a></p>
+            <p style="margin-top: 10px;">Already have an account? <a href="/users/signIn">Sign In</a></p>
         </div>
     </div>
     
