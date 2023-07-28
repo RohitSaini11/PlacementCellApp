@@ -7,7 +7,7 @@ A Node.js, MongoDB, and ExpressJS web app. Store, showcase, and manage student r
 
 1. Install NodeJS and MongoDb on your system.
 2. Clone this repository and run command *npm install / npm i*, this will install all the required dependecies.
-3. Once it is complete, the server will start and will be connected to the database and a message will be printed on the console *"successfully connected to database"*
+3. Once it is complete, run *npm start* the server will start and connect to the database and a message will be printed on the console *"successfully connected to database"*
 4. Finally, go to the browser and search *localhost:8000*, and that is it the web app will show.
 
 ### Features
