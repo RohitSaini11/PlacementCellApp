@@ -29,7 +29,6 @@ module.exports.create = function(req,res){
 
         User.create({email, password, name})
             .then((user)=>{
-                console.log("Da.!",user)
                 return res.redirect('/users/signIn');
             });
     }
